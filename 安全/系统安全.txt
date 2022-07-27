@@ -1,0 +1,77 @@
+一、密码
+定期更改  最低90天更换一次
+配置文件更改
+更改前一段时间提醒
+六、检查设备密码复杂度策略(高危)
+1、查看配置文件/etc/pam.d/system-auth中是否存在password    requisite     pam_cracklib.so try_first_pass retry=3 type=  minlen=9
+2、修改配置文件/etc/pam.d/system-auth，在password    requisite     pam_pwquality.so行上面添加以下命令行：password    requisite     pam_cracklib.so try_first_pass retry=3 type=  minlen=9；
+3、root账号下新建test4用户，passwd test4 admin@12345；
+4、在dtg账号下切换test4，passwd 修改密码进行测试；
+
+七、检查密码重复使用次数限制(中危)
+1、检查/etc/pam.d/system-auth 文件和/etc/pam.d/password-auth 文件中配置是否存在auth 区段以下配置：
+auth required pam_faillock.so preauth silent audit deny=3 unlock_time=600
+auth sufficient pam_unix.so nullok try_first_pass
+auth [default=die] pam_faillock.so authfail audit deny=3 unlock_time=600
+2、检查/etc/pam.d/system-auth 文件和/etc/pam.d/password-auth 文件中配置是否存在account 区段中添加的以下配置：
+account required pam_faillock.so
+3、通过test4账号进行输入错误密码3次。
+4、查看被锁定账号命令faillock，解锁命令faillocak --user test4 --reset
+
+5、如果需要设置root登录失败锁定，在配置文件中的unlock_time=600前面加入even_deny_root；
+
+八、检查是否设置除root之外UID为0的用户(中危)
+1、在/etc/passwd文件的默认情况下除root所在行外所有行第二个与第三个冒号之间UID不为0。
+2、模拟修改test3用户的uid命令，usermod -u 0 -o test3；
+3、查看/etc/passwd文件发现除root所在行外test3行的第二个与第三个冒号之间UID为0。
+4、修改test3用户的uid，修改 /etc/passwd文件中test3行的第二个与第三个冒号之间UID与GID相同。
+
+九、检查用户目录缺省访问权限设置(高危)
+1、检查/etc/login.defs文件的umask值是否为027或大于027
+umask值为022
+drwxr-xr-x.  2 root root   6 9月   2 14:55 test1
+-rw-r--r--.  1 root root   0 9月   2 14:54 test1.txt
+umask 为002
+drwxrwxr-x.  2 root root   6 9月   2 15:05 test2
+-rw-rw-r--.  1 root root   0 9月   2 15:05 test2.txt
+umask说明：
+d rwx rwx rwx. 2 root root 6 9月   2 14:55 test1
+   421 421 421  777
+   0      2      2 umask
+d rwx r-x r-x. 2 root root 6 9月   2 14:55 test1
+   421 401 401   755
+-rw-rw-rw-. 1 root root 0 9月   2 14:54 test1.txt
+  420 420 420  666
+   0      2      2 umask
+-rw-r--r--. 1 root root 0 9月   2 14:54 test1.txt
+ 420 400 400  644
+
+十、检查用户umask设置(中危)
+1、检查在/etc/csh.cshrc、/etc/bashrc、/etc/profile文件、/etc/csh.login文件的umask值是否为077。
+2、在/etc/csh.cshrc、/etc/bashrc、/etc/profile文件的默认情况下UMASK为022，而/etc/csh.login没有umask值。
+3、修改文件/etc/bashrc（或/etc/bash.bashrc）中umask 077或UMASK 077；
+4、修改文件/etc/profile中设置umask 077或UMASK 077
+
+十二、检查重要文件属性设置(中危)
+1、检查/etc/passwd、/etc/shadow、/etc/group、/etc/gshadow文件属性是否添加i属性。
+2、输入命令：lsattr /etc/passwd /etc/shadow /etc/group /etc/gshadow
+3、增加i属性：chattr +i /etc/passwd /etc/shadow /etc/group /etc/gshadow
+
+
+
+
+
+
+二、权限
+三、远程登陆限制
+ip列表
+四十、检查是否限制远程登录IP范围(低危)
+1、检查etc/hosts.allow文件不存在all:192.168.4.44:allow #允许单个IP或sshd:192.168.1.:allow #允许192.168.1的整个网段的PC通过SSH来访问本机等内容。
+2、编辑编辑/etc/hosts.allow文件；
+3、最后增加all:192.168.4.44:allow #允许单个IP;
+4、保存退出；
+5、编辑编辑/etc/hosts.deny文件；
+6、最后增加all:all；
+7、保存退出。
+8、测试通过dtg用户远程ssh登陆，发现无法登陆。
+9、编辑编辑/etc/hosts.allow文件，把all:192.168.4.44:allow中的ip地址修改成本机的ip地址。

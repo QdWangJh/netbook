@@ -1,0 +1,8 @@
+systectl  status  rsyslog	#redhat 6   之后日志名 rsyslog
+
+/var/log	#日志存放位置
+
+事件等级	emerg恐慌状态  alert 紧急状态  crit临界状态  err其他错误情况
+	warning警告    notice需要调查的事项  info 提供信息的消息   debug仅供调试
+
+journal	#查看日志

@@ -1,0 +1,76 @@
+a)       在系统路径(C:\Windows)下运行程序、脚本、批处理文件或者其它可执行文件，可以直接输入文件名运行。
+b)      如果文件名字或路径中有空格，需要用（'）引号将命令扩起来，同时在前面加上符号（&），这种叫做调用操作
+c)       要运行当前目录下的命令，需要文件名前加.\
+3.   运行PowerShell命令
+除了支持传统的Windows可执行文件，PowerShell还推出了一个功能强大的新的命令叫做cmdlet。
+所有的cmdlet命令规则都遵循动词-名词这种语法结构，
+如Get-Command、Get-Content等，如下Get-Command -Name * Process命令意思是获取包含Process的所有命令集合
+b)      若要查看一个命令的作用，可以使用Get-Help命令。例子如下，还可以指定参数-Detailed、-Full、-Examples。
+c)       由于PowerShell可以使用.NET Framework中的对象，因此要想查看一个对象的属性和方法，可以使用Get-Member命令
+5.   如何在外部调用PowerShell脚本
+有时候可能需要从批处理文件、定时任务或者其它非PowerShell程序调用PowerShell脚本，
+语法：PowerShell “& ‘full path of the script’ arguments”。
+6.   如何获知最后执行命令的状态
+PowerShell提供了两个变量可以检测最后执行的命令是否成功：$lastExitCode和$?。
+$lastExitCode：数字型变量，返回最后脚本或应用程序执行返回的退出码或出错级别：
+$?：布尔型变量，返回最后执行命令的成功还是失败：
+变量$?使用更通用的方式来描述最后的应用程序退出的状态，在以下应用程序发生错误的时候，PowerShell会设置$?为False：
+
+应用程序退出码非零；
+cmdlet或脚本输出错误信息；
+cmdlet或脚本捕获到终止错误或异常。
+当命令执行没有错误的时候，PowerShell设置$?变量为True。
+7.   如何计算命令执行时间
+如果想计算一个命令执行时间，可以使用Measure-Command命令，Measure-Command{}
+8.   了解命令的别名
+PowerShell一些内置命令都有别名，方便记忆和输入，可以用Get-Help命令查看别名，
+如下Get-Children的命令有三个别名：gci、ls和dir，输入任意一个都可以列举当前目录。
+9.   如何操作使用管理控制台历史命令
+在PowerShell窗口中，按上下箭头键可以寻找历史命令进行调用，也可以运行Get-History命令查找，
+用Invoke-History id方式进行调用：
+10. 如何重定向输出
+如果想把得到的结果输出到文件中，把命令的输出保存到文件中，‘>’为覆盖，’>>’追加。
+可以使用Out-File命令或者重定向操作符将命令输出的结果保存在文件中 
+例	PS C:\Users\81015> ls | Out-File "F:\翻译\test.txt"
+	PS C:\Users\81015> ls > "F:\翻译\aini.txt"
+获取文件内容  get-content   F:\翻译\aini.txt
+11. 如何记录PowerShell会话全文
+如果想生成当前会话的记录，可以运行Start-Transcript命令，它基于当前系统时间。
+如果想停止，运行Stop-Transcript：
+
+PS C:\Users\81015> Start-Transcript -path transcript.txt
+已启动脚本，输出文件为 transcript.txt
+PS C:\Users\81015> get-command -name *process
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Debug-Process                                      3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Enter-PSHostProcess                                3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Exit-PSHostProcess                                 3.0.0.0    Microsoft.PowerShell.Core
+Cmdlet          Get-Process                                        3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Start-Process                                      3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Stop-Process                                       3.1.0.0    Microsoft.PowerShell.Management
+Cmdlet          Wait-Process                                       3.1.0.0    Microsoft.PowerShell.Management
+
+
+PS C:\Users\81015> stop-transcript
+已停止脚本，输出文件为 C:\Users\81015\transcript.txt
+
+12. 如何显示对象属性为列表或表格 使用Format-List和Format-Table命令
+
+13.管道
+把上一条命令的输出作为下一条命令的输入。
+
+14.重命名  Set-Alias
+Set-Alias   newname   name
+
+15.创建文件/文件夹/软连接
+New-Item -path [E:\] -name [name] -type "directory"  //"file"文件  "directory"文件夹 "symboliclink"快捷方式软连接
+
+16.查看文件内容
+Get-Content [name]
+
+17.查看目录下文件
+ls   dir
+
+

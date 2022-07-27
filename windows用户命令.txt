@@ -1,0 +1,9 @@
+查看用户权限  whoami
+查看用户	net user
+添加用户  net  user  用户名 密码 /add
+删除用户 net user name  password  /del
+把用户加到用户组 net localgroup administrators  name  /add
+查看系统补丁  Systeminfo
+查看当前登陆用户  quser
+查看网络连接情况  netstat  -ano
+linux查看网络连接情况  netstat  -anptl

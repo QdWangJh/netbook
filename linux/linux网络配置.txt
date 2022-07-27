@@ -1,0 +1,6 @@
+ifconfig	#查看活跃的网卡信息
+             -a  #查看所有的网卡信息
+	网卡id  up/down #启用或关闭网卡
+ifup/ifdown 网卡id  #启用或禁用网卡
+ifconfig  网卡id  IP地址 netmask  子网  up  #配置IP地址
+nmcli	#打开图行化设置网卡信息

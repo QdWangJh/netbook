@@ -1,0 +1,35 @@
+**服务端启动与关闭**
+
+- step1：启动HDFS
+
+  ```
+  start-dfs.sh
+  ```
+
+
+- step2：启动ZK
+
+  ```shell
+  start-zk.sh
+  ```
+
+
+- step3：启动Hbase
+
+  ```
+  start-hbase.sh
+  ```
+
+  
+
+- 关闭：先关闭Hbase再关闭zk
+
+  ```
+  stop-hbase.sh
+  stop-zk.sh
+  stop-dfs.sh
+  ```
+
+开启HBase shell
+/bin/hbase shell
+  
