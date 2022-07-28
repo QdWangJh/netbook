@@ -1,0 +1,10 @@
+FineReport:  13994586567
+用户root 123456
+
+
+github账号 QdWangJh
+密码 Wanwayd5142.!@#$
+邮箱 wangyujh@163.com
+token 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
+-- 创建仓库
+git clone https://github.com/QdWangJh/master
