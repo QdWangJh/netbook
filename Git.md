@@ -114,6 +114,21 @@ git remote -v
 ```shell
 git remote remove 远程仓库的别名
 ```
+
+####  问题解决
+```sell
+# fatal: unable to access 'https://[github].com/XXX/':OpenSSL SSL_read: Connection was reset, errno 10054
+
+解决方法
+修改Git不使用[ssl]验证
+git config --global http.sslVerify "false"
+
+如果不行需删除账号后重新输入
+删除需要去控制面板----凭据保管库里删除
+```
+
+
+
 ### rebase
 #### 合并版本
 ```shell
