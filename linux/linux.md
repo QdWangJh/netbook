@@ -1,6 +1,6 @@
-cat /etc/redhat-release  ²é¿´ÏµÍ³°æ±¾ºÅ
-ÖØÆôLinuxÏµÍ³Ö÷»ú²¢³öÏÖÒýµ¼½çÃæÊ±£¬°´ÏÂ¼üÅÌÉÏµÄe¼ü½øÈëÄÚºË±à¼­½çÃæ
-ÔÚlinux16²ÎÊýÕâÐÐµÄ×îºóÃæ×·¼Ó¡°rd.break¡±²ÎÊý£¬È»ºó°´ÏÂCtrl + X×éºÏ¼üÀ´ÔËÐÐÐÞ¸Ä¹ýµÄÄÚºË³ÌÐò
+cat /etc/redhat-release  ï¿½é¿´ÏµÍ³ï¿½æ±¾ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½LinuxÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ïµï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚºË±à¼­ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½linux16ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×·ï¿½Ó¡ï¿½rd.breakï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½Ctrl + Xï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä¹ï¿½ï¿½ï¿½ï¿½ÚºË³ï¿½ï¿½ï¿½
 mount -o remount,rw /sysroot
 chroot /sysroot
 passwd
@@ -9,65 +9,65 @@ exit
 reboot
 
 
-³£ÓÃµÄRPMÈí¼þ°üÃüÁî
-°²×°Èí¼þµÄÃüÁî¸ñÊ½
+ï¿½ï¿½ï¿½Ãµï¿½RPMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 rpm -ivh filename.rpm
-Éý¼¶Èí¼þµÄÃüÁî¸ñÊ½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 rpm -Uvh filename.rpm
-Ð¶ÔØÈí¼þµÄÃüÁî¸ñÊ½
+Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 rpm -e filename.rpm
-²éÑ¯Èí¼þÃèÊöÐÅÏ¢µÄÃüÁî¸ñÊ½
+ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 rpm -qpi filename.rpm
-ÁÐ³öÈí¼þÎÄ¼þÐÅÏ¢µÄÃüÁî¸ñÊ½
+ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 rpm -qpl filename.rpm
-²éÑ¯ÎÄ¼þÊôÓÚÄÄ¸öRPMµÄÃüÁî¸ñÊ½
+ï¿½ï¿½Ñ¯ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½RPMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
 rpm -qf filename
 
 
-³£¼ûµÄYumÃüÁî
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Yumï¿½ï¿½ï¿½ï¿½
 
-ÃüÁî
-×÷ÓÃ
+ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½
 yum repolist all
-ÁÐ³öËùÓÐ²Ö¿â
+ï¿½Ð³ï¿½ï¿½ï¿½ï¿½Ð²Ö¿ï¿½
 yum list all
-ÁÐ³ö²Ö¿âÖÐËùÓÐÈí¼þ°ü
-yum info Èí¼þ°üÃû³Æ
-²é¿´Èí¼þ°üÐÅÏ¢
-yum install Èí¼þ°üÃû³Æ
-°²×°Èí¼þ°ü
-yum reinstall Èí¼þ°üÃû³Æ
-ÖØÐÂ°²×°Èí¼þ°ü
-yum update Èí¼þ°üÃû³Æ
-Éý¼¶Èí¼þ°ü
-yum remove Èí¼þ°üÃû³Æ
-ÒÆ³ýÈí¼þ°ü
+ï¿½Ð³ï¿½ï¿½Ö¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+yum info ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+yum install ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+yum reinstall ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½Â°ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+yum update ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+yum remove ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½Æ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 yum clean all
-Çå³ýËùÓÐ²Ö¿â»º´æ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²Ö¿â»ºï¿½ï¿½
 yum check-update
-¼ì²é¿É¸üÐÂµÄÈí¼þ°ü
+ï¿½ï¿½ï¿½É¸ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 yum grouplist
-²é¿´ÏµÍ³ÖÐÒÑ¾­°²×°µÄÈí¼þ°ü×é
-yum groupinstall Èí¼þ°ü×é
-°²×°Ö¸¶¨µÄÈí¼þ°ü×é
-yum groupremove Èí¼þ°ü×é
-ÒÆ³ýÖ¸¶¨µÄÈí¼þ°ü×é
-yum groupinfo Èí¼þ°ü×é
-²éÑ¯Ö¸¶¨µÄÈí¼þ°ü×éÐÅÏ¢
+ï¿½é¿´ÏµÍ³ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+yum groupinstall ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½×°Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+yum groupremove ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½Æ³ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+yum groupinfo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½Ñ¯Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 
-crtÁ¬½ÓÉÏ´«ÏÂÔØ°ü°²×°
+crtï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½×°
 yum -y install lrzsz
 
-which ÎÄ¼þÃû
+which ï¿½Ä¼ï¿½ï¿½ï¿½
 
-ËÑË÷ÃüÁîËùÔÚÂ·¾¶¼°±ðÃû
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-whereis ÃüÁîÃû
+whereis ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-#ËÑË÷ÃüÁîËùÔÚÂ·¾¶¼°°ïÖúÎÄµµËùÔÚÎ»ÖÃ
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 
-Ñ¡Ïî£º
+Ñ¡ï¿½î£º
 
- -b :Ö»²éÕÒ¿ÉÖ´ÐÐÎÄ¼þÎ»ÖÃ
+ -b :Ö»ï¿½ï¿½ï¿½Ò¿ï¿½Ö´ï¿½ï¿½ï¿½Ä¼ï¿½Î»ï¿½ï¿½
 
- -m:Ö»²éÕÒ°ïÖúÎÄ¼þ
+ -m:Ö»ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½

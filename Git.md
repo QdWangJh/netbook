@@ -1,5 +1,3 @@
-### 本地测试路径
-`E:\Git\master`
 
 ### 查看git版本
 ```shell
@@ -7,36 +5,38 @@ git --version
 ```
 
 ### 版本控制流程
-- 进入目录
-- 初始化
+####  进入目录
+#### 初始化
 ```shell
 git init
 ```
-- 管理
+#### 管理
 ```shell
 git status  -- 检测当前文件夹下文件的状态
 git add file_name
 git add .  -- 将没有管理的文件全部进行管理
 
 ```
-- 个人信息配置: 用户名 邮箱 (一次)
+#### 个人信息配置
 ```shell
+用户名 邮箱 (一次)
 git config --global user.name "name"
 git config --global user.email "email@.com"
 ```
 
-- 生成版本  -- 没有管理为红色,管理后为绿色
+####  生成版本  
 ```shell
+-- 没有管理为红色,管理后为绿色
 git commit -m '版本描述信息'  -- 生成为一个版本 将文件从暂存区上传到本地仓库
 ```
 - 版本生成后,无需新建文件,直接在源文件修改,修改完成后再生成版本
-- 查看历史版本
+#### 查看历史版本
 ```shell
 git log
 get log --graph --以图形显示
 get log --graph --pretty-format:"%h %s" --格式化输出
 ```
-- 回滚
+#### 回滚
 ```shell
 git reset --hard md5   -- git log 显示的commit的MD5值
 ```
@@ -56,8 +56,16 @@ git reset HEAD  -- 将此次所有误 add 文件从暂存区退回到工作区
 git reset HEAD file_name -- 将此次误 add 的文件退回到工作区
 ```
 
-### git模型图
+#### git模型图
 ![](Pasted%20image%2020220726140841.png)
+
+#### 给当前版本打标签
+```shell
+git tag -a  V1 -m "第一版"
+
+将标签版本上传到github
+git push 连接别名  --tags
+```
 
 ### 分支
 - 查看目前所在分支
@@ -71,6 +79,8 @@ git branch 分支名
 - 切换分支
 ```shell
 git checkout 分支名
+
+git checkout -b 分支名  --创建并进入分支
 ```
 - 合并分支(需先回到主分支)
 ```shell
@@ -97,6 +107,7 @@ git clone github地址   -- 第一次克隆
 ```
 - 将分支上传到GitHub
 ```shell
+git commit -m ''
 git push -u origin 分支名
 ```
 - 从GitHub下载到本地
@@ -127,7 +138,9 @@ git config --global http.sslVerify "false"
 删除需要去控制面板----凭据保管库里删除
 ```
 
-
+#### 多人协作
+- 在Github上建立组织
+- 邀请他人一起协作
 
 ### rebase
 #### 合并版本
@@ -175,4 +188,50 @@ git config --local mergetool.keepBackup false --是否保留原文件
 - 应用
 ```shell
 git mergetool  -- 打开软件解决冲突,完成后保存关闭
+```
+
+
+### 其他
+#### 配置
+- 项目配置文件
+当前项目下  .git/config 文件
+```shell
+git config --local      -当前项目下适用
+```
+- 全局配置文件
+当前系统用户目录下 ~/.gitconfig
+
+```shell
+git config --global      -当前系统用户适用
+```
+
+- 系统配置文件
+/etc/.gitconfig
+```shell
+git config --system     -要拥有root权限 
+```
+
+- 应用场景
+```shell
+git config --local user.name '名字'
+git config --local user.email '@.com'
+
+-- Beyond Compare 4
+git config --local merge.tool bc4
+git config --local mergetool.path '/path/bcomp'
+git config --local mergetool.keepBackup false
+
+-- 分支
+git remote add origin 地址  -- 默认添加在本地配置文件中(--local)
+```
+
+#### 忽略文件
+- 先在项目下创建文件 .gitignore
+- 将不需要管理的 文件夹/文件名 写入该文件
+```shell
+测试.txt
+*.txt
+!a.h  --除了该文件
+file/   -- 该目录下所有文件 
+-- 支持通配符 一行一个文件
 ```
