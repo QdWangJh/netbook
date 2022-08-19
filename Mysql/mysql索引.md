@@ -37,7 +37,7 @@ index index_name(列名)
 create index index_name on 表名(列名);
 
 修改表结构添加
-alter table 表名 add index index_name(列名);
+alter table 表名 add index(列名);
 ```
 
 

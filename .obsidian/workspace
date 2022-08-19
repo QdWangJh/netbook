@@ -107,15 +107,15 @@
   },
   "active": "81bd94e048b3ce89",
   "lastOpenFiles": [
+    "Impala.md",
+    "Mysql/mysql_shell.md",
+    "Mysql/mysql_基层命令.md",
+    "hdfs命令.md",
+    "Mysql/MySql操作.md",
+    "Mysql/mysql_jdbc.md",
     "Mysql/优化总结.md",
-    "linux/linux基础.md",
-    "linux/shell与数据库.md",
-    "linux/linux定时调度.md",
-    "linux/linux.md",
-    "linux/linux (2).md",
+    "Mysql/mysql索引.md",
     "Git.md",
-    "FineReport.md",
-    "Flink SQL 成神之路.pdf",
-    "hdfs命令.md"
+    "linux/linux基础.md"
   ]
 }
